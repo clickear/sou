@@ -22,6 +22,8 @@ $(document).ready(function() {
             if (wd == "" || wd == null) {
                 window.location.href = "https://www.google.com/?hl=zh";
             } else {
+            	$("form").attr('action', 'https://www.google.com/search?hl=zh');
+            	$(".wd").attr("name","q");
                 $(".t").val("g");
                 $("form").submit();
             }
@@ -29,6 +31,8 @@ $(document).ready(function() {
             if (wd == "" || wd == null) {
                 window.location.href = "https://www.baidu.com/?tn=simple";
             } else {
+            	$("form").attr('action', 'https://www.baidu.com/s?ie=utf-8');
+            	$(".wd").attr("name","wd");
                 $(".t").val("b");
                 $("form").submit();
             }
@@ -39,12 +43,10 @@ $(document).ready(function() {
     $("#menu").click(function(event) {
         $(this).toggleClass('on');
         $(".list").toggleClass('closed');
-        $(".mywth").toggleClass('hidden');
     });
     $("#content").click(function(event) {
         $(".on").removeClass('on');
         $(".list").addClass('closed');
-        $(".mywth").removeClass('hidden');
     });
     $(".mywth").click(function(event) {
         var wt = $("body").width();
